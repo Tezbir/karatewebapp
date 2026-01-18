@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import ScrollToTop from "./ScrollToTop";
 const CERTS = [
   {
     img: "/images/certificates/cert7.jpg",
