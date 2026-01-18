@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -10,6 +10,35 @@ import OldDojo from "./OldDojo";
 export default function App() {
   const phone = "5163819660";
   const phonePretty = "(516) 381-9660";
+const heroVideoRef = useRef(null);
+
+useEffect(() => {
+  const v = heroVideoRef.current;
+  if (!v) return;
+
+  v.muted = true;
+  v.playsInline = true;
+
+  const tryPlay = async () => {
+    try {
+      await v.play();
+    } catch {
+      const resume = () => {
+        v.play().catch(() => {});
+        window.removeEventListener("touchstart", resume);
+        window.removeEventListener("click", resume);
+      };
+
+      window.addEventListener("touchstart", resume, { once: true });
+      window.addEventListener("click", resume, { once: true });
+    }
+  };
+
+  tryPlay();
+  v.addEventListener("canplay", tryPlay);
+
+  return () => v.removeEventListener("canplay", tryPlay);
+}, []);
 
   return (
     <>
@@ -69,7 +98,16 @@ export default function App() {
 
                 {/* VIDEO (replaces GROUP PHOTO) */}
                 <section className="photoWrap">
-                  <video className="photo heroVideo" autoPlay loop muted playsInline>
+                  <video
+  ref={heroVideoRef}
+  className="photo heroVideo"
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+>
+
                     <source src="/videos/KarateFightVidLoop.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
