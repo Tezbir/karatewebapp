@@ -84,15 +84,18 @@ export default function About() {
                 }}
               >
                 <video
-                  muted
-                  playsInline
-                  preload="metadata"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
+  src="/videos/KarateFightVidLoop.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+  }}
                 >
                   <source
                     src="/videos/SenseiBreakingDemo.mp4"
