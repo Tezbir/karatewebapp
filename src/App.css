@@ -1,38 +1,567 @@
-.App {
-  text-align: center;
+/* GLOBAL */
+.page {
+ min-height: 100vh;
+ background: #000;
+ color: #fff;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+   Roboto, Helvetica, Arial, sans-serif;
+}
+html,
+body,
+#root,
+.page,
+.homeContainer {
+  overflow-anchor: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* TOP BAR */
+.topBar {
+ padding: 10px 12px;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.topLink {
+ color: #fff;
+ font-size: 12px;
+ text-decoration: underline;
+}
+
+
+/* HERO TEXT */
+.heroTextSection {
+ padding: 30px 16px 26px;
+ text-align: center;
+}
+
+
+.heroTitleSmall {
+ font-size: 18px;
+ letter-spacing: 2px;
+}
+
+.heroTitleBig {
+ font-size: clamp(34px, 6vw, 52px);
+ font-weight: 900;
+}
+
+
+.heroCallout {
+ font-size: 20px;
+ line-height: 28px;
+}
+
+scroll
+.bold {
+ font-weight: 800;
+}
+
+
+.cta {
+ display: inline-block;
+ background: #b30000;
+ color: #fff;
+ padding: 12px 20px;
+ border-radius: 10px;
+ font-weight: 800;
+ text-decoration: none;
+}
+
+
+/* GROUP PHOTO */
+.photoWrap {
+ padding: 14px;
+}
+
+
+.photo {
+ width: 100%;
+ height: 450px;
+ object-fit: cover;
+ object-position: center 30%;
+ border-radius: 10px;
+}
+
+
+
+
+
+
+/* GALLERY */
+.photoWrap{
+ margin-top: 14px;
+ padding: 0;
+}
+.gallerySection {
+ padding: 28px 15px;
+}
+
+
+.galleryRow {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 16px;
+}
+
+
+.goldFrame {
+ border: 3px solid #c9a227;
+ padding: 8px;
+}
+
+
+.galleryImage {
+ width: 100%;
+ height: 240px;
+ object-fit: cover;
+}
+
+
+/* SLOGAN */
+.slogan {
+ margin-top: 28px;
+ color: #c9a227;
+ font-size: clamp(20px, 3vw, 32px);
+ font-style: italic;
+ font-weight: 900;
+ text-align: center;
+}
+
+
+/* RATES */
+.ratesSection {
+ padding: 30px 16px;
+}
+
+
+.rateImages {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 14px;
+ margin-bottom: 24px;
+}
+
+
+.rateImage {
+ width: 100%;
+ height: 200px;
+ object-fit: cover;
+}
+
+
+.rateText {
+ text-align: center;
+ font-size: clamp(20px, 3vw, 32px);
+ font-weight: 700;
+}
+
+
+.red {
+ color: #ff0000;
+ font-weight: 900;
+}
+
+
+/* HERO IMAGE */
+.heroImageSection {
+ padding: 10px 16px 0;
+}
+
+
+.heroImage {
+ width: 100%;
+ height: auto;
+ display: block;
+}
+
+
+/* JOIN */
+.joinSection {
+ text-align: center;
+ padding: 40px 16px;
+}
+
+
+.bullyLogo {
+ width: 240px;
+ margin-bottom: 20px;
+}
+
+
+.joinTitle {
+ font-size: clamp(34px, 5vw, 52px);
+ font-weight: 900;
+}
+
+
+.joinPhone {
+ color: #fff;
+ font-size: 22px;
+ font-weight: 800;
+ display: inline-block;
+ margin-bottom: 18px;
+}
+
+
+.joinSmall {
+ font-size: 13px;
+ line-height: 18px;
+}
+
+
+.website {
+ font-size: 16px;
+ font-weight: 700;
+}
+
+
+.footerPad {
+ height: 40px;
+}
+
+
+/* MOBILE */
+@media (max-width: 640px) {
+ .galleryRow,
+ .rateImages {
+   grid-template-columns: 1fr;
+ }
+
+
+ .photo {
+   height: 220px;
+ }
+}
+#root {
+ min-height: 100vh;
+ overflow: visible;
+}
+
+
+@media (max-width: 768px) {
+ .gallerySection > div {
+   grid-template-columns: 1fr !important;
+ }
+}
+@media (max-width: 768px) {
+ .sparringVideosGrid {
+   grid-template-columns: 1fr;
+ }
+}
+
+
+
+
+
+
+.certPage {
+ background: #0d0f11; /* deep red */
+ padding: 18px 16px 60px;
+}
+
+
+.certTopBar {
+ display: flex;
+ justify-content: flex-end;
+ margin-bottom: 8px;
+}
+
+
+.certHomeBtn {
+ background: #c9a227;
+ color: #000;
+ padding: 8px 12px;
+ font-weight: 800;
+ text-decoration: none;
+ border-radius: 6px;
+}
+
+
+.certTitle {
+ text-align: center;
+ color: #c9a227;
+ font-weight: 900;
+ font-size: clamp(38px, 5vw, 64px);
+ margin: 10px 0 18px;
+ letter-spacing: 1px;
+}
+
+
+.patchSection {
+ max-width: 1100px;
+ margin: 0 auto 28px;
+}
+
+
+.patchLabel {
+ color: #c9a227;
+ font-weight: 900;
+ margin-bottom: 10px;
+}
+
+
+.patchFrame {
+ border: 3px solid #c9a227;
+ padding: 10px;
+ background: rgba(0, 0, 0, 0.25);
+}
+
+
+.patchRow {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 10px;
+}
+
+
+.patchImg {
+ width: 100%;
+ height: 70px;
+ object-fit: contain;
+ background: rgba(255, 255, 255, 0.05);
+ border: 1px solid rgba(201, 162, 39, 0.35);
+}
+
+
+.certGrid {
+ max-width: 1100px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 30px;
+}
+
+
+.certCard {
+ text-align: center;
+}
+
+
+.certImgFrame {
+ border: 4px solid #c9a227;
+ padding: 10px;
+ background: #000;
+ width: 100%;
+}
+
+
+.certImg {
+ width: 100%;
+ height: 180px;
+ object-fit: cover;
+ display: block;
+}
+
+
+.certCaption {
+ margin-top: 14px;
+ color: #c9a227;
+ font-weight: 800;
+ line-height: 22px;
+ font-size: 14px;
+}
+
+
+.certCaptionTitle {
+ margin-bottom: 6px;
+}
+
+
+.certPhotosBtn {
+ margin-top: 12px;
+ background: #c9a227;
+ border: none;
+ color: #000;
+ font-weight: 900;
+ padding: 8px 14px;
+ border-radius: 6px;
+ cursor: pointer;
+}
+
+
+.certBottomNav {
+ margin-top: 50px;
+ display: flex;
+ justify-content: center;
+}
+
+
+/* SIMPLE CERTIFICATES PAGE (MATCHES SITE) */
+
+
+.certSimpleGrid {
+ max-width: 1000px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 28px;
+}
+
+
+.certSimpleCard {
+ text-align: center;
+}
+
+
+.certSimpleImg {
+ width: 100%;
+ height: 220px;
+ object-fit: cover;
+ border-radius: 6px;
+}
+
+
+.certSimpleText {
+ margin-top: 12px;
+ font-size: 14px;
+ line-height: 20px;
+ color: #ddd;
+}
+
+
+@media (max-width: 900px) {
+ .certSimpleGrid {
+   grid-template-columns: repeat(2, 1fr);
+ }
+}
+
+
+@media (max-width: 560px) {
+ .certSimpleGrid {
+   grid-template-columns: 1fr;
+ }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+ .certGrid {
+   grid-template-columns: repeat(2, 1fr);
+ }
+ .patchRow {
+   grid-template-columns: repeat(3, 1fr);
+ }
+}
+
+
+@media (max-width: 560px) {
+ .certGrid {
+   grid-template-columns: 1fr;
+ }
+}
+.sparringWrap {
+ margin-top: 60px;
+ padding: 0 16px;            /* keeps it nice on mobile */
+}
+
+
+.sparringInner {
+ max-width: 900px;
+ width: 100%;
+ margin: 0 auto;             /* ✅ forces centering even if flex is overridden */
+}
+
+
+.sparringTitle {
+ text-align: center;
+ font-size: 28px;
+ font-weight: 800;
+ margin-bottom: 32px;
+ color: #c9a227;
+}
+
+
+.sparringGrid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 24px;
+}
+
+
+.sparringBox {
+ border: 3px solid #c9a227;
+ height: 220px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 700;
+ color: #aaa;
+ background: rgba(0, 0, 0, 0.25);
+}
+
+
+.sparringButtons {
+ margin-top: 44px;
+ display: flex;
+ gap: 18px;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+
+
+@media (max-width: 768px) {
+ .sparringGrid {
+   grid-template-columns: 1fr;
+ }
+}
+.patchPlaceholder {
+ height: 120px;
+ background: rgba(255, 255, 255, 0.05);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 700;
+ font-size: 13px;
+}
+
+
+/* HOME PAGE CONTAINER (prevents stretching on wide screens) */
+.homeContainer {
+ max-width: 1100px;     /* adjust: 980 / 1100 / 1200 */
+ margin: 0 auto;
+ width: 100%;
+}
+html {
+ scroll-padding-top: 90px; /* navbar/header height */
+}
+.ctaRow {
+ display: flex;
+ justify-content: center;
+ gap: 20px;        /* space between buttons */
+ margin-top: 20px; /* optional: space above buttons */
+ flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .photo.heroVideo {
+    height: 320px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.photo.heroVideo {
+  height: 480px;
 }
 
-.App-link {
-  color: #61dafb;
+html, body, #root {
+  overflow-anchor: none;
+}
+.photoWrap {
+  padding: 14px;
+  height: 650px;        /* lock the layout */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 640px) {
+  .photoWrap {
+    height: 320px;      /* lock on mobile too */
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+html, body, #root {
+  overflow-anchor: none;
+}
+.page {
+  height: 100vh;
+  overflow-y: auto;
 }

@@ -1,13 +1,559 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* =========================
+   GLOBAL RESET / BASE
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+/* =========================
+   PAGE WRAPPER
+   ========================= */
+
+.page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Optional: use this wrapper inside pages to avoid edge-to-edge stretch */
+.pageInner,
+.homeContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.topBar {
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.topLink {
+  color: #fff;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+/* Wrap "Text Us" + "Message Us" in this to add spacing */
+.topActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* =========================
+   HERO TEXT
+   ========================= */
+
+.heroTextSection {
+  padding: 26px 14px 18px;
+  text-align: center;
+  margin-top: 22px; /* vertical spacing */
+}
+
+.heroTitleSmall {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.heroTitleBig {
+  font-size: clamp(34px, 6vw, 52px);
+  font-weight: 900;
+  margin: 10px 0;
+}
+
+.heroCallout {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.cta {
+  display: inline-block;
+  background: #b30000;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Use this around multiple buttons so they don't touch */
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   GROUP PHOTO
+   ========================= */
+
+.photoWrap {
+  padding: 10px 0;
+  margin-top: 22px;
+}
+
+.photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 14px;
+}
+
+/* =========================
+   GALLERY
+   ========================= */
+
+.gallerySection {
+  padding: 16px 0;
+  margin-top: 22px;
+}
+
+.galleryRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.goldFrame {
+  border: 3px solid #c9a227;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* =========================
+   SLOGAN
+   ========================= */
+
+.slogan {
+  margin-top: 28px;
+  color: #c9a227;
+  font-size: clamp(20px, 3vw, 32px);
+  font-style: italic;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* =========================
+   RATES
+   ========================= */
+
+.ratesSection {
+  padding: 16px 0;
+  margin-top: 22px;
+}
+
+.rateImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.rateImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.rateText {
+  text-align: center;
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 700;
+}
+
+.red {
+  color: #ff0000;
+  font-weight: 900;
+}
+
+/* =========================
+   HERO IMAGE
+   ========================= */
+
+.heroImageSection {
+  padding: 10px 0 0;
+  margin-top: 22px;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* =========================
+   JOIN SECTION
+   ========================= */
+
+.joinSection {
+  text-align: center;
+  padding: 22px 0 34px;
+  margin-top: 22px;
+}
+
+.bullyLogo {
+  width: 240px;
+  margin-bottom: 20px;
+}
+
+.joinTitle {
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 900;
+}
+
+.joinPhone {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  display: inline-block;
+  margin-bottom: 18px;
+  text-decoration: none;
+}
+
+.joinSmall {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.website {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =========================
+   FOOTER SPACER
+   ========================= */
+
+.footerPad {
+  height: 40px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 640px) {
+  .galleryRow,
+  .rateImages {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    height: 220px;
+  }
+}
+
+/* =========================
+   CERTIFICATES: FLYER + CARD
+   ========================= */
+
+.flyerCardSection {
+  width: 100%;
+  margin-top: 90px;
+}
+
+.flyerCardGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.flyerCardCol {
+  text-align: center;
+}
+
+.flyerCardTitle {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 18px;
+}
+
+.flyerCardImg {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+/* Mobile: stack them */
+@media (max-width: 640px) {
+  .flyerCardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .flyerCardImg {
+    height: 320px;
+  }
+}
+
+/* =========================
+   STOCK CERTIFICATE
+   ========================= */
+
+.stockCertificateSection {
+  width: 100%;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 14px;
+}
+
+.stockCertificateTitle {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.stockCertificateImg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+/* Mobile adjustment */
+@media (max-width: 640px) {
+  .stockCertificateImg {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   DOCUMENTS HEADER
+   ========================= */
+
+.documentsHeader {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.documentsTitle {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* =========================
+   HERO BANNER IMAGE
+   ========================= */
+
+.heroBanner {
+  width: 100%;
+  background: #000;
+}
+
+.heroBannerImg {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
+/* ---------- OLD DOJO PAGE ---------- */
+
+.oldDojo {
+  background: #000;
+}
+
+.oldDojoTitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.oldDojoSubtitle {
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.85;
+  margin-bottom: 44px;
+}
+
+/* SECTION CONTAINERS */
+
+.dojoSection {
+  max-width: 1100px;
+  margin: 0 auto 56px;
+  padding: 0 16px;
+}
+
+.dojoSectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* 4-UP GRID */
+
+.dojoGrid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* 3-UP GRID */
+
+.dojoGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* 2-UP GRID */
+
+.dojoGrid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* TOURNAMENT (image-text-image) */
+
+.dojoTournament {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* IMAGES / PLACEHOLDERS */
+
+.dojoImg {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+.dojoPlaceholder {
+  width: 100%;
+  padding-top: 70%;
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 13px;
+  border-radius: 14px;
+}
+
+.dojoPlaceholderWide {
+  padding-top: 32%;
+}
+
+/* TEXT */
+
+.dojoCaption {
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.dojoCenterText {
+  text-align: center;
+}
+
+.dojoCenterTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .dojoGrid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dojoGrid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .dojoTournament {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* =========================
+   ABOUT PAGE FIXES (VIDEOS + SPACING)
+   ========================= */
+
+/* Wrap the 2 videos in <div className="aboutVideoGrid"> */
+.aboutVideoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.aboutVideoGrid iframe,
+.aboutVideoGrid video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+@media (max-width: 640px) {
+  .aboutVideoGrid {
+    grid-template-columns: 1fr;
+  }
 }
