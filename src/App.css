@@ -558,10 +558,15 @@ html, body, #root {
     height: 320px;      /* lock on mobile too */
   }
 }
-html, body, #root {
-  overflow-anchor: none;
-}
-.page {
-  height: 100vh;
+html, body {
+  height: auto;
+  min-height: 100%;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
 }
