@@ -570,3 +570,30 @@ html, body {
   min-height: 100%;
   overflow: visible;
 }
+@media (max-width: 640px) {
+  /* stop sections from overlapping */
+  .photoWrap {
+    height: auto !important;     /* override the locked heights */
+    min-height: 0 !important;
+    padding: 14px;
+    margin-top: 14px;
+  }
+
+  .photo.heroVideo {
+    height: auto !important;
+    max-height: 60vh;            /* keeps it big but safe */
+  }
+
+  /* make images scale naturally */
+  .galleryImage,
+  .rateImage {
+    height: auto;
+    aspect-ratio: 16 / 9;        /* consistent look on mobile */
+    object-fit: cover;
+    display: block;
+  }
+
+  .goldFrame {
+    padding: 8px;
+  }
+}
