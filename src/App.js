@@ -56,7 +56,14 @@ useEffect(() => {
                   <a className="topLink" href="mailto:seigiddaidojo@optonline.net">
                     seigiddaidojo@optonline.net
                   </a>
-            
+            <a
+  href="https://www.google.com/maps?q=Ronkonkoma,+NY"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Ronkonkoma, Long Island, NY
+</a>
+
                   <a
                     className="topLink"
                     href="https://www.facebook.com/john.benedict.862370/"
