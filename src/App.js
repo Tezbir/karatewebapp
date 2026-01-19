@@ -177,10 +177,14 @@ useEffect(() => {
                   </a>
 
                   <p className="joinSmall">
+                     Seitouha Karate offers effective, traditional training in Goju Ryu Karate, 
+                      <br />
+                    Mixed Martial Arts (MMA), Personal Training, and Cardio Kickboxing.
+                      <br />
                     All classes are taught by Sensei John Benedict, 7th Degree Black
                     Belt (Renshi).
                     <br />
-                    Seitouha Karate (Seigi Dai Dojo)
+                    Seitouha Goju Ryu (Seigi Dai Dojo)
                     <br />
                     Ronkonkoma, NY
                     <br />
