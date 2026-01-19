@@ -56,13 +56,7 @@ useEffect(() => {
                   <a className="topLink" href="mailto:seigiddaidojo@optonline.net">
                     seigiddaidojo@optonline.net
                   </a>
-<a
-  href="https://www.google.com/maps?q=Ronkonkoma,+Long+Island,+NY"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Ronkonkoma, NY
-</a>
+            
                   <a
                     className="topLink"
                     href="https://www.facebook.com/john.benedict.862370/"
@@ -183,6 +177,7 @@ useEffect(() => {
                   </a>
 
                   <p className="joinSmall">
+                    
                      Seitouha Karate offers effective, traditional training in Goju Ryu Karate, 
                       <br />
                     Mixed Martial Arts (MMA), Personal Training, and Cardio Kickboxing.
