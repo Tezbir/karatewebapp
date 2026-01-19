@@ -61,7 +61,7 @@ useEffect(() => {
   target="_blank"
   rel="noopener noreferrer"
 >
-  Ronkonkoma, Long Island, NY
+  Ronkonkoma, NY
 </a>
 
                   <a
