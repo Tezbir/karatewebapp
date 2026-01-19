@@ -658,7 +658,7 @@ html.is-mobile .exhibitionGrid {
   .photo,
   .galleryImage,
   .rateImage {
-    height: 85vh !important;         /* <-- THIS is the number to tweak */
+    height: 50vh !important;         /* <-- THIS is the number to tweak */
     object-fit: contain !important;  /* keeps full image visible */
     background: #000;                /* letterbox */
   }
