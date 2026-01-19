@@ -644,3 +644,15 @@ html.is-mobile .dojoRulesGrid {
 html.is-mobile .exhibitionGrid {
   grid-template-columns: 1fr !important;
 }
+@media (max-width: 768px) {
+  .page {
+    padding-bottom: 120px;
+  }
+}
+.heroVideo {
+  height: 460px; /* current is probably ~360–400 */
+}
+.backButtonSpace {
+  margin-top: 48px;
+  margin-bottom: 100px;
+}

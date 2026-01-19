@@ -279,6 +279,11 @@ export default function Certificates() {
           ABOUT
           </Link>
         </div>
+          
+
+        {/* EXTRA BOTTOM SPACE (mobile-friendly) */}
+        <div style={{ height: "140px" }} />
+
       </section>
     </div>
   );
@@ -289,4 +294,4 @@ const imgStyle = {
   height: "180px",
   objectFit: "cover",
   borderRadius: "6px",
-};
+}; 

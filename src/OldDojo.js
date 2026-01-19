@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import ScrollToTop from "./ScrollToTop";
+
 export default function OldDojo() {
   return (
     <div className="page" style={{ background: "#000" }}>
@@ -91,6 +91,7 @@ export default function OldDojo() {
   <Link className="cta" to="/about">
     ABOUT
   </Link>
+
 </div>
       </section>
     </div>
@@ -340,4 +341,4 @@ function HolbrookSection({ title, subtitle, photos }) {
       </div>
     </div>
   );
-}
+} 

@@ -1,16 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 
 export default function About() {
-  const [activeVideo, setActiveVideo] = useState(null);
-  const modalVideoRef = useRef(null);
-
-  const openVideo = (src) => setActiveVideo(src);
-  const closeVideo = () => setActiveVideo(null);
+  const [video1Playing, setVideo1Playing] = useState(false);
+  const [video2Playing, setVideo2Playing] = useState(false);
 
   return (
-    <div className="page">
+    <div className="page aboutPage">
       <section className="gallerySection" style={{ paddingTop: "32px" }}>
         <h1
           className="heroTitleBig"
@@ -61,7 +58,6 @@ export default function About() {
               VIDEOS
             </h2>
 
-            {/* SIDE-BY-SIDE GRID */}
             <div
               className="sparringGrid"
               style={{
@@ -70,103 +66,123 @@ export default function About() {
                 gap: "16px",
               }}
             >
-              {/* BOX 1 */}
+              {/* VIDEO 1 */}
               <div
-                className="sparringBox"
-                onClick={() => openVideo("/videos/SenseiBreakingDemo.mp4")}
                 style={{
-                  cursor: "pointer",
-                  position: "relative",
-                  overflow: "hidden",
                   borderRadius: "14px",
-                  minHeight: "220px",
-                  background: "#0b0b0b",
+                  overflow: "hidden",
+                  background: "#000",
+                  height: "220px",
                 }}
               >
-                <video
-  src="/videos/KarateFightVidLoop.mp4"
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="auto"
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    display: "block",
-  }}
-                >
-                  <source
-                    src="/videos/SenseiBreakingDemo.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                {!video1Playing ? (
+                  <div
+                    onClick={() => setVideo1Playing(true)}
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      height: "100%",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/1tYMM611g4k/hqdefault.jpg"
+                      alt="Video preview"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
 
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    display: "grid",
-                    placeItems: "center",
-                    background: "rgba(0,0,0,0.25)",
-                    fontWeight: 800,
-                    letterSpacing: "1px",
-                    pointerEvents: "none",
-                  }}
-                >
-                  CLICK
-                </div>
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "grid",
+                        placeItems: "center",
+                        background: "rgba(0,0,0,0.35)",
+                        fontSize: "48px",
+                        fontWeight: "900",
+                      }}
+                    >
+                      ▶
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    src="https://www.youtube.com/embed/1tYMM611g4k?autoplay=1"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                  />
+                )}
               </div>
 
-              {/* BOX 2 */}
+              {/* VIDEO 2 */}
               <div
-                className="sparringBox"
-                onClick={() => openVideo("/videos/SenseiCompHighlights.mp4")}
                 style={{
-                  cursor: "pointer",
-                  position: "relative",
-                  overflow: "hidden",
                   borderRadius: "14px",
-                  minHeight: "220px",
-                  background: "#0b0b0b",
+                  overflow: "hidden",
+                  background: "#000",
+                  height: "220px",
                 }}
               >
-                <video
-                  muted
-                  playsInline
-                  preload="metadata"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                >
-                  {/* FIX: matches what opens */}
-                  <source src="/videos/SecondVideo.mp4" type="video/mp4" />
-                </video>
+                {!video2Playing ? (
+                  <div
+                    onClick={() => setVideo2Playing(true)}
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      height: "100%",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/HjzxpKWVTpc/hqdefault.jpg"
+                      alt="Video preview"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
 
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    display: "grid",
-                    placeItems: "center",
-                    background: "rgba(0,0,0,0.25)",
-                    fontWeight: 800,
-                    letterSpacing: "1px",
-                    pointerEvents: "none",
-                  }}
-                >
-                  CLICK
-                </div>
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "grid",
+                        placeItems: "center",
+                        background: "rgba(0,0,0,0.35)",
+                        fontSize: "48px",
+                        fontWeight: "900",
+                      }}
+                    >
+                      ▶
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    src="https://www.youtube.com/embed/HjzxpKWVTpc?autoplay=1"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                  />
+                )}
               </div>
             </div>
 
-            {/* BUTTONS (spaced so they don't touch) */}
+            {/* BUTTONS */}
             <div
-              className="sparringButtons"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -185,83 +201,16 @@ export default function About() {
           </div>
         </div>
 
-        {/* VIDEO MODAL */}
-        {activeVideo && (
-          <div
-            onClick={closeVideo}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.75)",
-              zIndex: 9999,
-              display: "grid",
-              placeItems: "center",
-              padding: "18px",
-            }}
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                width: "min(1000px, 96vw)",
-                background: "#000",
-                borderRadius: "14px",
-                overflow: "hidden",
-              }}
-            >
-              <div style={{ padding: "10px", textAlign: "right" }}>
-                <button
-                  onClick={closeVideo}
-                  style={{
-                    background: "none",
-                    border: "1px solid rgba(255,255,255,0.4)",
-                    color: "#fff",
-                    padding: "6px 14px",
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                    boxShadow: "none",
-                    outline: "none",
-                  }}
-                >
-                  CLOSE
-                </button>
-              </div>
-
-              <video
-                ref={modalVideoRef}
-                controls
-                autoPlay
-                playsInline
-                style={{
-                  width: "100%",
-                  maxHeight: "80vh",
-                  display: "block",
-                }}
-              >
-                <source src={activeVideo} type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        )}
-
-        {/* BACK TO HOME (spaced, centered) */}
-        <div style={{ textAlign: "center", marginTop: "28px" }}>
+        {/* BACK HOME */}
+        <div style={{ textAlign: "center", marginTop: "32px" }}>
           <Link className="cta" to="/">
             HOME
           </Link>
         </div>
       </section>
 
-      {/* Mobile: stack the text/image and videos cleanly */}
-      <style>
-        {`
-          @media (max-width: 640px) {
-            .gallerySection > div[style*="gridTemplateColumns: 1fr 1fr"] {
-              grid-template-columns: 1fr !important;
-            }
-           
-          }
-        `}
-      </style>
+      {/* EXTRA MOBILE BOTTOM SPACE */}
+      <div style={{ height: "140px" }} />
     </div>
   );
 }
