@@ -56,13 +56,19 @@ useEffect(() => {
                   <a className="topLink" href="mailto:seigiddaidojo@optonline.net">
                     seigiddaidojo@optonline.net
                   </a>
-            <a
-  href="https://www.google.com/maps?q=Ronkonkoma,+NY"
+                   <a
+  href="https://www.google.com/maps?q=Ronkonkoma,+Long+Island,+NY"
   target="_blank"
   rel="noopener noreferrer"
+  style={{
+    color: "#fff",
+    fontSize: "12px",
+    textDecoration: "underline",
+  }}
 >
-  Ronkonkoma, NY
+  Ronkonkoma, Long Island, NY
 </a>
+
 
                   <a
                     className="topLink"
