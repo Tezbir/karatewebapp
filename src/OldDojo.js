@@ -107,13 +107,7 @@ function SectionGrid({ title, images }) {
         {title}
       </h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "16px",
-        }}
-      >
+      <div className="oldDojoGrid4">
         {images.map((src, i) => (
           <img
             key={i}
