@@ -658,7 +658,7 @@ html.is-mobile .exhibitionGrid {
     object-fit: contain !important;
     object-position: center !important;
     height: auto !important;
-    max-height: 90vh;   /* ← noticeably taller */
+    max-height: 150vh;   /* ← noticeably taller */
     background: #000;
   }
 
