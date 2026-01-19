@@ -451,7 +451,6 @@ body {
   flex-wrap: wrap;
 }
 
-
 .dojoRulesGrid {
   display: grid;
 }
@@ -480,9 +479,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .gallerySection > div {
-    grid-template-columns: 1fr !important;
-  }
+  /* REMOVED: .gallerySection > div { grid-template-columns: 1fr !important; } */
 
   .page {
     padding-bottom: 120px;
@@ -558,6 +555,7 @@ body {
     display: block;
   }
 }
+
 /* EXHIBITION: responsive grid (not a 7-image strip) */
 .exhibitionGrid {
   display: grid;
