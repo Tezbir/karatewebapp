@@ -48,11 +48,6 @@ export default function OldDojo() {
           ]}
         />
 
-        {/* SECTION 3 — SINGLE IMAGE */}
-        <SectionSingle
-          title="Fellow Students"
-          image="/images/281BWay/281FellowStudents.png"
-        />
 
         {/* SECTION 4 — IMAGE / TEXT / IMAGE */}
         <SectionTournament
