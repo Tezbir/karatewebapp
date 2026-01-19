@@ -141,15 +141,15 @@ export default function Certificates() {
 <div style={{ width: "100%", marginTop: "60px", clear: "both" }}>
 
           <div
-  className="dojoRulesGrid"
-  style={{
-    maxWidth: "1100px",
-    margin: "0 auto",
-    alignItems: "center",
-    gap: "32px",
-  }}
->
-
+            style={{
+              maxWidth: "1100px",
+              margin: "0 auto",
+              display: "grid",
+              gridTemplateColumns: "1fr auto 1fr",
+              alignItems: "center",
+              gap: "32px",
+            }}
+          >
             <img
               src="/images/dojo-rules/dojo-rules-left.jpg"
               alt="Dojo Rules Left"
@@ -279,11 +279,6 @@ export default function Certificates() {
           ABOUT
           </Link>
         </div>
-          
-
-        {/* EXTRA BOTTOM SPACE (mobile-friendly) */}
-        <div style={{ height: "140px" }} />
-
       </section>
     </div>
   );
@@ -294,4 +289,4 @@ const imgStyle = {
   height: "180px",
   objectFit: "cover",
   borderRadius: "6px",
-}; 
+};

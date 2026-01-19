@@ -93,11 +93,11 @@ scroll
 
 /* GALLERY */
 .photoWrap{
- margin-top: 14px;
+ margin-top: 0px;
  padding: 0;
 }
 .gallerySection {
- padding: 28px 15px;
+ padding: px 15px;
 }
 
 
@@ -624,18 +624,6 @@ html, body {
   grid-template-columns: 1fr 1fr; /* desktop */
 }
 
-@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
-
-  .dojoRulesGrid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .exhibitionGrid {
-    grid-template-columns: 1fr !important;
-  }
-
-}
-
 /* Mobile-only layouts (via JS class) */
 html.is-mobile .dojoRulesGrid {
   grid-template-columns: 1fr !important;
@@ -652,7 +640,11 @@ html.is-mobile .exhibitionGrid {
 .heroVideo {
   height: 460px; /* current is probably ~360–400 */
 }
-.backButtonSpace {
-  margin-top: 48px;
-  margin-bottom: 100px;
+
+.dojoRulesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
 }
