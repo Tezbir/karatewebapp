@@ -57,17 +57,14 @@ useEffect(() => {
                     seigiddaidojo@optonline.net
                   </a>
                    <a
+  className="topLink"
   href="https://www.google.com/maps?q=Ronkonkoma,+Long+Island,+NY"
   target="_blank"
   rel="noopener noreferrer"
-  style={{
-    color: "#fff",
-    fontSize: "12px",
-    textDecoration: "underline",
-  }}
 >
-  Ronkonkoma, Long Island, NY
+  Ronkonkoma, NY
 </a>
+
 
 
                   <a
