@@ -9,6 +9,7 @@ export default function About() {
   return (
     <div className="page aboutPage">
       <section className="gallerySection" style={{ paddingTop: "32px" }}>
+        {/* TITLE */}
         <h1
           className="heroTitleBig"
           style={{ textAlign: "center", marginBottom: "28px" }}
@@ -29,8 +30,8 @@ export default function About() {
         >
           <p style={{ fontSize: "18px", lineHeight: "30px", margin: 0 }}>
             Sensei John Benedict was born on June 25, 1965 in Brooklyn, New York.
-            He began his martial arts training in Florida, one of the many stops
-            in a turbulent childhood. Upon returning to Brooklyn some time later,
+            He began his martial arts training in Florida, one of the many stops in
+            a turbulent childhood. Upon returning to Brooklyn some time later,
             his father, eager to pass on to his son the discipline and strong work
             ethic he had acquired from his career in the military, brought him to
             the Ying Yee Kwoon Martial Arts studio on Roebling Street in
@@ -58,14 +59,8 @@ export default function About() {
               VIDEOS
             </h2>
 
-            <div
-              className="sparringGrid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "16px",
-              }}
-            >
+            {/* GRID CONTROLLED BY CSS */}
+            <div className="sparringGrid">
               {/* VIDEO 1 */}
               <div
                 style={{
@@ -111,8 +106,8 @@ export default function About() {
                   </div>
                 ) : (
                   <iframe
-                    src="https://www.youtube.com/embed/1tYMM611g4k?autoplay=1"
-                    allow="autoplay; encrypted-media"
+                    src="https://www.youtube.com/embed/1tYMM611g4k?autoplay=1&playsinline=1"
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                     allowFullScreen
                     style={{
                       width: "100%",
@@ -142,17 +137,15 @@ export default function About() {
                       cursor: "pointer",
                     }}
                   >
-                    <iframe
-  src="https://www.youtube.com/embed/1tYMM611g4k?autoplay=1&playsinline=1"
-  allow=" encrypted-media; fullscreen; picture-in-picture"
-  allowFullScreen
-  style={{
-    width: "100%",
-    height: "100%",
-    border: "none",
-  }}
-/>
-
+                    <img
+                      src="https://img.youtube.com/vi/HjzxpKWVTpc/hqdefault.jpg"
+                      alt="Video preview"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
 
                     <div
                       style={{
@@ -170,16 +163,15 @@ export default function About() {
                   </div>
                 ) : (
                   <iframe
-  src="https://www.youtube.com/embed/HjzxpKWVTpc?autoplay=1&playsinline=1"
-  allow=" encrypted-media; fullscreen; picture-in-picture"
-  allowFullScreen
-  style={{
-    width: "100%",
-    height: "100%",
-    border: "none",
-  }}
-/>
-
+                    src="https://www.youtube.com/embed/HjzxpKWVTpc?autoplay=1&playsinline=1"
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                  />
                 )}
               </div>
             </div>
@@ -212,7 +204,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* EXTRA MOBILE BOTTOM SPACE */}
+      {/* EXTRA MOBILE SPACE */}
       <div style={{ height: "140px" }} />
     </div>
   );
