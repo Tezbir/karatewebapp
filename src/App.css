@@ -1,4 +1,3 @@
-/* GLOBAL */
 .page {
  min-height: 100vh;
  background: #000;
@@ -643,29 +642,31 @@ html.is-mobile .exhibitionGrid {
 
 .dojoRulesGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto;
 }
-/* FORCE HERO VIDEO SIZE (wins over all earlier rules) */
-.photo.heroVideo {
-  height: 500px !important;
-}
-/* MOBILE: make media taller (no cropping) */
+/* MOBILE: stop cropping the ends of images/videos */
 @media (max-width: 640px) {
+  /* HERO VIDEO / HERO IMAGE */
   .photo.heroVideo,
-  .photo,
-  .galleryImage,
-  .rateImage {
-    height: 50vh !important;         /* <-- THIS is the number to tweak */
-    object-fit: contain !important;  /* keeps full image visible */
-    background: #000;                /* letterbox */
+  .photo {
+    object-fit: contain !important;
+    object-position: center !important;
+    height: auto !important;
+    max-height: 60vh; /* keeps it from getting insanely tall */
+    background: #000; /* letterbox bars blend in */
   }
 
-  /* keep wrapper from fighting the height */
+  /* GALLERY + RATES IMAGES */
+  .galleryImage,
+  .rateImage {
+    object-fit: contain !important;
+    object-position: center !important;
+    height: auto !important;
+    max-height: 80vh;  /* prevents super tall images */
+    background: #000;  /* letterbox bars */
+  }
+
+  /* If any wrapper is forcing weird heights, neutralize on mobile */
   .photoWrap {
     height: auto !important;
   }
 }
-
