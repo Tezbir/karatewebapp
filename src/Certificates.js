@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
+
 const CERTS = [
   {
     img: "/images/certificates/cert7.jpg",
@@ -74,7 +75,45 @@ const CERTS = [
   },
 ];
 
+const imgStyle = {
+  width: "100%",
+  height: "180px",
+  objectFit: "cover",
+  borderRadius: "6px",
+};
+
+function ExhibitionCollapsible({ open, onToggle, children }) {
+  return (
+    <div style={{ width: "100%", marginTop: "80px" }}>
+      <button
+        type="button"
+        onClick={onToggle}
+        className="goldFrame"
+        style={{
+          width: "100%",
+          background: "rgba(0,0,0,0.35)",
+          color: "#c9a227",
+          cursor: "pointer",
+          borderRadius: "14px",
+          padding: "18px",
+          fontSize: "22px",
+          fontWeight: 900,
+          textAlign: "center",
+          letterSpacing: "1px",
+        }}
+        aria-expanded={open}
+      >
+        Ying Yee Kwoon Martial Arts Exhibition Program ’88
+      </button>
+
+      {open && <div style={{ marginTop: "36px" }}>{children}</div>}
+    </div>
+  );
+}
+
 export default function Certificates() {
+  const [showExhibition, setShowExhibition] = useState(false);
+
   return (
     <div className="page">
       <section className="gallerySection">
@@ -131,15 +170,13 @@ export default function Certificates() {
           </div>
         </div>
 
+        {/* DOCUMENTS HEADER */}
+        <div className="documentsHeader" style={{ marginTop: "70px" }}>
+          <h2 className="documentsTitle">Documents</h2>
+        </div>
 
-{/* DOCUMENTS HEADER */}
-<div className="documentsHeader">
-  <h2 className="documentsTitle">Documents</h2>
-</div>
-
-{/* DOJO RULES */}
-<div style={{ width: "100%", marginTop: "60px", clear: "both" }}>
-
+        {/* DOJO RULES — ALWAYS VISIBLE + SIDE BY SIDE */}
+        <div style={{ width: "100%", marginTop: "60px", clear: "both" }}>
           <div
             style={{
               maxWidth: "1100px",
@@ -162,6 +199,7 @@ export default function Certificates() {
                   fontSize: "36px",
                   fontWeight: 900,
                   letterSpacing: "2px",
+                  margin: 0,
                 }}
               >
                 Dojo Rules
@@ -176,66 +214,62 @@ export default function Certificates() {
           </div>
         </div>
 
+        {/* EXHIBITION — COLLAPSIBLE */}
         {/* EXHIBITION PROGRAM */}
-        <div style={{ width: "100%", marginTop: "100px" }}>
-          <h2
-            style={{
-              textAlign: "center",
-              fontSize: "28px",
-              fontWeight: 800,
-              marginBottom: "40px",
-            }}
-          >
-            Ying Yee Kwoon Martial Arts Exhibition Program '88
-          </h2>
+<div style={{ width: "100%", marginTop: "100px" }}>
+  <h2
+    style={{
+      textAlign: "center",
+      fontSize: "28px",
+      fontWeight: 800,
+      marginBottom: "40px",
+    }}
+  >
+    Ying Yee Kwoon Martial Arts Exhibition Program '88
+  </h2>
 
-          {/* 7 IMAGE STRIP */}
-          <div
-            style={{
-              maxWidth: "1400px",
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: "repeat(7, 1fr)",
-              gap: "16px",
-            }}
-          >
-            <img
-              src="/images/YingYeeKwoonExhibition/GlenCove1.jpg"
-              alt=""
-              style={imgStyle}
-            />
-            <img
-              src="/images/YingYeeKwoonExhibition/GlenCove2.jpg"
-              alt=""
-              style={imgStyle}
-            />
-            <img
-              src="/images/YingYeeKwoonExhibition/GlenCove3.jpg"
-              alt=""
-              style={imgStyle}
-            />
-            <img
-              src="/images/YingYeeKwoonExhibition/GlenCove4.jpg"
-              alt=""
-              style={imgStyle}
-            />
-            <img
-              src="/images/YingYeeKwoonExhibition/GlenCove5.jpg"
-              alt=""
-              style={imgStyle}
-            />
-            <img
-              src="/images/YingYeeKwoonExhibition/GlenCove6.jpg"
-              alt=""
-              style={imgStyle}
-            />
-            <img
-              src="/images/YingYeeKwoonExhibition/GlenCove7.jpg"
-              alt=""
-              style={imgStyle}
-            />
-          </div>
-        </div>
+  <div
+    className="exhibitionGrid"
+    style={{ maxWidth: "1400px", margin: "0 auto" }}
+  >
+    <img
+      src="/images/YingYeeKwoonExhibition/GlenCove1.jpg"
+      alt=""
+      style={imgStyle}
+    />
+    <img
+      src="/images/YingYeeKwoonExhibition/GlenCove2.jpg"
+      alt=""
+      style={imgStyle}
+    />
+    <img
+      src="/images/YingYeeKwoonExhibition/GlenCove3.jpg"
+      alt=""
+      style={imgStyle}
+    />
+    <img
+      src="/images/YingYeeKwoonExhibition/GlenCove4.jpg"
+      alt=""
+      style={imgStyle}
+    />
+    <img
+      src="/images/YingYeeKwoonExhibition/GlenCove5.jpg"
+      alt=""
+      style={imgStyle}
+    />
+    <img
+      src="/images/YingYeeKwoonExhibition/GlenCove6.jpg"
+      alt=""
+      style={imgStyle}
+    />
+    <img
+      src="/images/YingYeeKwoonExhibition/GlenCove7.jpg"
+      alt=""
+      style={imgStyle}
+    />
+  </div>
+</div>
+
 
         {/* 281 b'way  */}
         <div className="flyerCardSection">
@@ -262,31 +296,26 @@ export default function Certificates() {
           </div>
         </div>
 
-        
-       <div className="stockCertificateSection">
-  <h2 className="stockCertificateTitle">Sensei John Benedict's Stock Certificate</h2>
+        {/* STOCK CERTIFICATE */}
+        <div className="stockCertificateSection">
+          <h2 className="stockCertificateTitle">
+            Sensei John Benedict&apos;s Stock Certificate
+          </h2>
 
-  <img
-    src="/images/StockCertificate.jpg"
-    alt="Stock Certificate"
-    className="stockCertificateImg"
-  />
-</div>
+          <img
+            src="/images/StockCertificate.jpg"
+            alt="Stock Certificate"
+            className="stockCertificateImg"
+          />
+        </div>
 
         {/* BACK BUTTON */}
         <div style={{ textAlign: "center", marginTop: "60px" }}>
           <Link className="cta" to="/about">
-          ABOUT
+            ABOUT
           </Link>
         </div>
       </section>
     </div>
   );
 }
-
-const imgStyle = {
-  width: "100%",
-  height: "180px",
-  objectFit: "cover",
-  borderRadius: "6px",
-};
