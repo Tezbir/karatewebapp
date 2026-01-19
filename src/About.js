@@ -1,321 +1,250 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 
-const CERTS = [
-  {
-    img: "/images/certificates/cert7.jpg",
-    title: "Green Belt",
-    org: "Ying Yee Kwoon",
-    date: "December 9th, 1983",
-    location: "305 Roebling St, Williamsburg, Brooklyn, NY",
-  },
-  {
-    img: "/images/certificates/cert6.jpg",
-    title: "Purple Belt",
-    org: "Ying Yee Kwoon",
-    date: "January 31st, 1984",
-    location: "281 Broadway, Williamsburg, Brooklyn, NY",
-  },
-  {
-    img: "/images/certificates/cert5.jpg",
-    title: "Brown Belt",
-    org: "Ying Yee Kwoon",
-    date: "May 4th, 1985",
-    location: "281 Broadway, Williamsburg, Brooklyn, NY",
-  },
-  {
-    img: "/images/certificates/cert4.jpg",
-    title: "1st Degree Blackbelt",
-    org: "Ying Yee Kwoon",
-    date: "June 13th, 1987",
-    location: "281 Broadway, Williamsburg, Brooklyn, NY",
-  },
-  {
-    img: "/images/certificates/cert3.jpg",
-    title: "2nd Degree Blackbelt",
-    org: "Ying Yee Kwoon",
-    date: "August 12th, 1991",
-    location: "190 Glen Cove Avenue, Glen Cove, NY",
-  },
-  {
-    img: "/images/certificates/cert8.jpg",
-    title: "Teaching Certificate",
-    org: "Yoshido Goju-Ryu Karate",
-    date: "March 11th, 1995",
-    location: "",
-  },
-  {
-    img: "/images/certificates/cert2.jpg",
-    title: "3rd Degree Blackbelt",
-    org: "Yoshido Goju-Ryu Karate",
-    date: "May 4th, 1996",
-    location: "",
-  },
-  {
-    img: "/images/certificates/cert9.jpg",
-    title: "Teaching Certificate",
-    org: "Yoshido Goju-Ryu Karate",
-    date: "February 1st, 1997",
-    location: "",
-  },
-  {
-    img: "/images/certificates/cert1.jpg",
-    title: "4th Degree Blackbelt",
-    org: "Yoshido Goju-Ryu Karate",
-    date: "September 9th, 2003",
-    location: "",
-  },
-  {
-    img: "/images/certificates/cert10.jpg",
-    title: "Advanced Forms Seminar Certificate",
-    org: "Yoshido Goju-Ryu Karate",
-    date: "December 9th, 2007",
-    location: "Bushwick, Brooklyn, NY",
-  },
-];
+export default function About() {
+  const [activeVideoId, setActiveVideoId] = useState(null);
+  const modalRef = useRef(null);
 
-const imgStyle = {
-  width: "100%",
-  height: "180px",
-  objectFit: "cover",
-  borderRadius: "6px",
-};
+  const openVideo = (id) => setActiveVideoId(id);
+  const closeVideo = () => setActiveVideoId(null);
 
-function ExhibitionCollapsible({ open, onToggle, children }) {
-  return (
-    <div style={{ width: "100%", marginTop: "80px" }}>
-      <button
-        type="button"
-        onClick={onToggle}
-        className="goldFrame"
-        style={{
-          width: "100%",
-          background: "rgba(0,0,0,0.35)",
-          color: "#c9a227",
-          cursor: "pointer",
-          borderRadius: "14px",
-          padding: "18px",
-          fontSize: "22px",
-          fontWeight: 900,
-          textAlign: "center",
-          letterSpacing: "1px",
-        }}
-        aria-expanded={open}
-      >
-        Ying Yee Kwoon Martial Arts Exhibition Program ’88
-      </button>
+  // Close on ESC
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") closeVideo();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
-      {open && <div style={{ marginTop: "36px" }}>{children}</div>}
-    </div>
-  );
-}
-
-export default function Certificates() {
-  const [showExhibition, setShowExhibition] = useState(false);
+  // Prevent background scroll while modal is open
+  useEffect(() => {
+    if (activeVideoId) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [activeVideoId]);
 
   return (
-    <div className="page">
-      <section className="gallerySection">
+    <div className="page aboutPage">
+      <section className="gallerySection" style={{ paddingTop: "32px" }}>
         {/* TITLE */}
         <h1
           className="heroTitleBig"
-          style={{ textAlign: "center", marginBottom: "40px" }}
+          style={{ textAlign: "center", marginBottom: "28px" }}
         >
-          Certificates
+          About Sensei John Benedict
         </h1>
 
-        {/* CERTIFICATES GRID */}
-        <div className="certSimpleGrid">
-          {CERTS.map((c, i) => (
-            <div key={i} className="certSimpleCard">
-              <img src={c.img} alt={c.title} className="certSimpleImg" />
-              <div className="certSimpleText">
-                <strong>{c.title}</strong>
-                <div>{c.org}</div>
-                {c.location && <div>{c.location}</div>}
-                <div>{c.date}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* TEXT + IMAGE */}
+        <div
+          style={{
+            maxWidth: "900px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "26px",
+            alignItems: "center",
+          }}
+        >
+          <p style={{ fontSize: "18px", lineHeight: "30px", margin: 0 }}>
+            Sensei John Benedict was born on June 25, 1965 in Brooklyn, New York.
+            He began his martial arts training in Florida, one of the many stops
+            in a turbulent childhood. Upon returning to Brooklyn some time later,
+            his father, eager to pass on to his son the discipline and strong work
+            ethic he had acquired from his career in the military, brought him to
+            the Ying Yee Kwoon Martial Arts studio on Roebling Street in
+            Williamsburg, Brooklyn.
+          </p>
 
-        {/* PATCHES OF THE PAST */}
-        <div style={{ marginTop: "80px", width: "100%" }}>
-          <h2
-            style={{
-              textAlign: "center",
-              fontSize: "32px",
-              fontWeight: 800,
-              marginBottom: "32px",
-            }}
-          >
-            Patches of the Past
-          </h2>
-
-          <div
-            style={{
-              maxWidth: "1000px",
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-              gap: "24px",
-            }}
-          >
+          <div className="goldFrame" style={{ borderRadius: "16px" }}>
             <img
-              src="/images/patchesofthepast.png"
-              alt="Patches of the Past"
-              style={{ width: "100%", objectFit: "contain" }}
+              src="/images/RenshiJohnTournament.jpeg"
+              alt="Sensei John"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: "14px",
+              }}
             />
           </div>
         </div>
 
-        {/* DOCUMENTS HEADER */}
-        <div className="documentsHeader" style={{ marginTop: "70px" }}>
-          <h2 className="documentsTitle">Documents</h2>
-        </div>
+        {/* VIDEOS */}
+        <div className="sparringWrap" style={{ marginTop: "34px" }}>
+          <div className="sparringInner">
+            <h2 className="sparringTitle" style={{ marginBottom: "16px" }}>
+              VIDEOS
+            </h2>
 
-        {/* DOJO RULES — ALWAYS VISIBLE + SIDE BY SIDE */}
-        <div style={{ width: "100%", marginTop: "60px", clear: "both" }}>
-          <div
-            style={{
-              maxWidth: "1100px",
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: "1fr auto 1fr",
-              alignItems: "center",
-              gap: "32px",
-            }}
-          >
-            <img
-              src="/images/dojo-rules/dojo-rules-left.jpg"
-              alt="Dojo Rules Left"
-              style={{ width: "100%", maxHeight: "350px", objectFit: "contain" }}
-            />
-
-            <div style={{ textAlign: "center" }}>
-              <h2
+            {/* Grid controlled by CSS (.sparringGrid) */}
+            <div className="sparringGrid">
+              {/* VIDEO 1 */}
+              <div
+                onClick={() => openVideo("1tYMM611g4k")}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && openVideo("1tYMM611g4k")}
                 style={{
-                  fontSize: "36px",
-                  fontWeight: 900,
-                  letterSpacing: "2px",
-                  margin: 0,
+                  borderRadius: "14px",
+                  overflow: "hidden",
+                  background: "#000",
+                  height: "220px",
+                  cursor: "pointer",
+                  position: "relative",
                 }}
               >
-                Dojo Rules
-              </h2>
+                <img
+                  src="https://img.youtube.com/vi/1tYMM611g4k/hqdefault.jpg"
+                  alt="Video preview"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    display: "grid",
+                    placeItems: "center",
+                    background: "rgba(0,0,0,0.35)",
+                    fontSize: "48px",
+                    fontWeight: "900",
+                    color: "#fff",
+                  }}
+                >
+                  ▶
+                </div>
+              </div>
+
+              {/* VIDEO 2 */}
+              <div
+                onClick={() => openVideo("HjzxpKWVTpc")}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && openVideo("HjzxpKWVTpc")}
+                style={{
+                  borderRadius: "14px",
+                  overflow: "hidden",
+                  background: "#000",
+                  height: "220px",
+                  cursor: "pointer",
+                  position: "relative",
+                }}
+              >
+                <img
+                  src="https://img.youtube.com/vi/HjzxpKWVTpc/hqdefault.jpg"
+                  alt="Video preview"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    display: "grid",
+                    placeItems: "center",
+                    background: "rgba(0,0,0,0.35)",
+                    fontSize: "48px",
+                    fontWeight: "900",
+                    color: "#fff",
+                  }}
+                >
+                  ▶
+                </div>
+              </div>
             </div>
 
-            <img
-              src="/images/dojo-rules/dojo-rules-right.jpg"
-              alt="Dojo Rules Right"
-              style={{ width: "100%", maxHeight: "350px", objectFit: "contain" }}
-            />
-          </div>
-        </div>
-
-        {/* EXHIBITION — COLLAPSIBLE */}
-        {/* EXHIBITION PROGRAM */}
-<div style={{ width: "100%", marginTop: "100px" }}>
-  <h2
-    style={{
-      textAlign: "center",
-      fontSize: "28px",
-      fontWeight: 800,
-      marginBottom: "40px",
-    }}
-  >
-    Ying Yee Kwoon Martial Arts Exhibition Program '88
-  </h2>
-
-  <div
-    className="exhibitionGrid"
-    style={{ maxWidth: "1400px", margin: "0 auto" }}
-  >
-    <img
-      src="/images/YingYeeKwoonExhibition/GlenCove1.jpg"
-      alt=""
-      style={imgStyle}
-    />
-    <img
-      src="/images/YingYeeKwoonExhibition/GlenCove2.jpg"
-      alt=""
-      style={imgStyle}
-    />
-    <img
-      src="/images/YingYeeKwoonExhibition/GlenCove3.jpg"
-      alt=""
-      style={imgStyle}
-    />
-    <img
-      src="/images/YingYeeKwoonExhibition/GlenCove4.jpg"
-      alt=""
-      style={imgStyle}
-    />
-    <img
-      src="/images/YingYeeKwoonExhibition/GlenCove5.jpg"
-      alt=""
-      style={imgStyle}
-    />
-    <img
-      src="/images/YingYeeKwoonExhibition/GlenCove6.jpg"
-      alt=""
-      style={imgStyle}
-    />
-    <img
-      src="/images/YingYeeKwoonExhibition/GlenCove7.jpg"
-      alt=""
-      style={imgStyle}
-    />
-  </div>
-</div>
-
-
-        {/* 281 b'way  */}
-        <div className="flyerCardSection">
-          <div className="flyerCardGrid">
-            {/* LEFT */}
-            <div className="flyerCardCol">
-              <h2 className="flyerCardTitle">Dojo Flyer</h2>
-              <img
-                src="/images/DojoFlyer.jpg"
-                alt="Dojo Flyer"
-                className="flyerCardImg"
-              />
-            </div>
-
-            {/* RIGHT */}
-            <div className="flyerCardCol">
-              <h2 className="flyerCardTitle">Business Card</h2>
-              <img
-                src="/images/DojoBuisnessCard.jpg"
-                alt="Business Card"
-                className="flyerCardImg"
-              />
+            {/* BUTTONS */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "12px",
+                flexWrap: "wrap",
+                marginTop: "18px",
+              }}
+            >
+              <Link className="cta" to="/certificates">
+                CERTIFICATES
+              </Link>
+              <Link className="cta" to="/old-dojo">
+                OLD DOJOS
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* STOCK CERTIFICATE */}
-        <div className="stockCertificateSection">
-          <h2 className="stockCertificateTitle">
-            Sensei John Benedict&apos;s Stock Certificate
-          </h2>
-
-          <img
-            src="/images/StockCertificate.jpg"
-            alt="Stock Certificate"
-            className="stockCertificateImg"
-          />
-        </div>
-
-        {/* BACK BUTTON */}
-        <div style={{ textAlign: "center", marginTop: "60px" }}>
-          <Link className="cta" to="/about">
-            ABOUT
+        {/* BACK HOME */}
+        <div style={{ textAlign: "center", marginTop: "32px" }}>
+          <Link className="cta" to="/">
+            HOME
           </Link>
         </div>
       </section>
+
+      {/* EXTRA MOBILE SPACE */}
+      <div style={{ height: "140px" }} />
+
+      {/* MODAL PLAYER (stays on your site) */}
+      {activeVideoId && (
+        <div
+          onClick={closeVideo}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.85)",
+            display: "grid",
+            placeItems: "center",
+            zIndex: 9999,
+            padding: "18px",
+          }}
+        >
+          <div
+            ref={modalRef}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "min(980px, 95vw)",
+              aspectRatio: "16 / 9",
+              background: "#000",
+              borderRadius: "16px",
+              overflow: "hidden",
+              position: "relative",
+              border: "3px solid #c9a227",
+            }}
+          >
+            {/* Close button */}
+            <button
+              onClick={closeVideo}
+              aria-label="Close video"
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                zIndex: 2,
+                background: "rgba(0,0,0,0.65)",
+                color: "#fff",
+                border: "1px solid rgba(255,255,255,0.25)",
+                borderRadius: "10px",
+                padding: "8px 10px",
+                cursor: "pointer",
+                fontWeight: 900,
+              }}
+            >
+              ✕
+            </button>
+
+            <iframe
+              title="Video"
+              src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?autoplay=1&playsinline=1&modestbranding=1&rel=0`}
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{ width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
