@@ -610,3 +610,8 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.joinSmall a {
+  color: #fff;
+  text-decoration: underline;
+}
+
