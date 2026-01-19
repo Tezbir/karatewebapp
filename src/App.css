@@ -648,3 +648,9 @@ html.is-mobile .exhibitionGrid {
   max-width: 900px;
   margin: 0 auto;
 }
+/* FORCE HERO VIDEO SIZE (wins over all earlier rules) */
+.photo.heroVideo {
+  height: 500px !important;
+}
+
+
