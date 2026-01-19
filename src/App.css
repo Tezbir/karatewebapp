@@ -652,5 +652,31 @@ html.is-mobile .exhibitionGrid {
 .photo.heroVideo {
   height: 500px !important;
 }
+@media (max-width: 640px) {
+  /* HERO VIDEO / HERO IMAGE */
+  .photo.heroVideo,
+  .photo {
+    object-fit: contain !important;
+    object-position: center !important;
+    height: auto !important;
+    max-height: 60vh; /* keeps it from getting insanely tall */
+    background: #000; /* letterbox bars blend in */
+  }
+
+  /* GALLERY + RATES IMAGES */
+  .galleryImage,
+  .rateImage {
+    object-fit: contain !important;
+    object-position: center !important;
+    height: auto !important;
+    max-height: 55vh;  /* prevents super tall images */
+    background: #000;  /* letterbox bars */
+  }
+
+  /* If any wrapper is forcing weird heights, neutralize on mobile */
+  .photoWrap {
+    height: auto !important;
+  }
+}
 
 
