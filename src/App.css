@@ -451,11 +451,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Mobile-only layouts (via JS class) */
-html.is-mobile .dojoRulesGrid {
-  grid-template-columns: 1fr !important;
-}
-
 
 .dojoRulesGrid {
   display: grid;
