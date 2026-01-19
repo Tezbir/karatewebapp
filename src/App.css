@@ -590,3 +590,23 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* OldDojo: responsive 4-photo grid */
+.oldDojoGrid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* tablet: 2 per row */
+@media (max-width: 1000px) {
+  .oldDojoGrid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile: 1 per row */
+@media (max-width: 600px) {
+  .oldDojoGrid4 {
+    grid-template-columns: 1fr;
+  }
+}
