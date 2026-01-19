@@ -56,7 +56,13 @@ useEffect(() => {
                   <a className="topLink" href="mailto:seigiddaidojo@optonline.net">
                     seigiddaidojo@optonline.net
                   </a>
-
+<a
+  href="https://www.google.com/maps?q=Ronkonkoma,+Long+Island,+NY"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Ronkonkoma, NY
+</a>
                   <a
                     className="topLink"
                     href="https://www.facebook.com/john.benedict.862370/"
@@ -181,18 +187,21 @@ useEffect(() => {
                       <br />
                     Mixed Martial Arts (MMA), Personal Training, and Cardio Kickboxing.
                       <br />
+                    Group classes and private lessons available for men, women and children.
+                    <br />
                     All classes are taught by Sensei John Benedict, 7th Degree Black
                     Belt (Renshi).
                     <br />
-                    Seitouha Goju Ryu (Seigi Dai Dojo)
+                      
+                    Seitouha Goju Ryu Karate(Seigi Dai Dojo)
                     <br />
-                    Ronkonkoma, NY
+                    Ronkonkoma, Long Island, NY
                     <br />
                     <br />
                     KARATE • MIXED MARTIAL ARTS (MMA)
                   </p>
 
-                  <div className="website">www.MMALongIsland.com</div>
+                  <div className="website">www.mmalongisland.com</div>
                 </section>
 
                 <div className="footerPad" />
