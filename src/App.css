@@ -652,18 +652,20 @@ html.is-mobile .exhibitionGrid {
 .photo.heroVideo {
   height: 500px !important;
 }
+/* MOBILE: make media taller (no cropping) */
 @media (max-width: 640px) {
   .photo.heroVideo,
-  .photo {
-    object-fit: contain !important;
-    object-position: center !important;
-    height: auto !important;
-    max-height: 150vh;   /* ← noticeably taller */
-    background: #000;
+  .photo,
+  .galleryImage,
+  .rateImage {
+    height: 85vh !important;         /* <-- THIS is the number to tweak */
+    object-fit: contain !important;  /* keeps full image visible */
+    background: #000;                /* letterbox */
   }
 
-
+  /* keep wrapper from fighting the height */
   .photoWrap {
     height: auto !important;
   }
 }
+
