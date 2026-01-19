@@ -658,18 +658,10 @@ html.is-mobile .exhibitionGrid {
     object-fit: contain !important;
     object-position: center !important;
     height: auto !important;
-    max-height: 85vh;   /* ← noticeably taller */
+    max-height: 90vh;   /* ← noticeably taller */
     background: #000;
   }
 
-  .galleryImage,
-  .rateImage {
-    object-fit: contain !important;
-    object-position: center !important;
-    height: auto !important;
-    max-height: 80vh;   /* ← clearly taller */
-    background: #000;
-  }
 
   .photoWrap {
     height: auto !important;
