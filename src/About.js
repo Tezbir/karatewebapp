@@ -142,15 +142,17 @@ export default function About() {
                       cursor: "pointer",
                     }}
                   >
-                    <img
-                      src="https://img.youtube.com/vi/HjzxpKWVTpc/hqdefault.jpg"
-                      alt="Video preview"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
+                    <iframe
+  src="https://www.youtube.com/embed/1tYMM611g4k?autoplay=1&playsinline=1"
+  allow=" encrypted-media; fullscreen; picture-in-picture"
+  allowFullScreen
+  style={{
+    width: "100%",
+    height: "100%",
+    border: "none",
+  }}
+/>
+
 
                     <div
                       style={{
@@ -168,15 +170,16 @@ export default function About() {
                   </div>
                 ) : (
                   <iframe
-                    src="https://www.youtube.com/embed/HjzxpKWVTpc?autoplay=1"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      border: "none",
-                    }}
-                  />
+  src="https://www.youtube.com/embed/HjzxpKWVTpc?autoplay=1&playsinline=1"
+  allow=" encrypted-media; fullscreen; picture-in-picture"
+  allowFullScreen
+  style={{
+    width: "100%",
+    height: "100%",
+    border: "none",
+  }}
+/>
+
                 )}
               </div>
             </div>
