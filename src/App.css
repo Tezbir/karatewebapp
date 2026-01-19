@@ -610,8 +610,18 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.joinSmall {
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
 .joinSmall a {
   color: #fff;
   text-decoration: underline;
+}
+
+.joinSmall a:visited {
+  color: #fff;
 }
 
