@@ -58,7 +58,7 @@ useEffect(() => {
                   </a>
                    <a
   className="topLink"
-  href="https://www.google.com/maps?q=Ronkonkoma,+Long+Island,+NY"
+  href="https://www.google.com/maps?q=Ronkonkoma,+NY"
   target="_blank"
   rel="noopener noreferrer"
 >
