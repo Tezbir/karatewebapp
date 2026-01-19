@@ -456,9 +456,6 @@ html.is-mobile .dojoRulesGrid {
   grid-template-columns: 1fr !important;
 }
 
-html.is-mobile .exhibitionGrid {
-  grid-template-columns: 1fr !important;
-}
 
 .dojoRulesGrid {
   display: grid;
@@ -564,5 +561,39 @@ html.is-mobile .exhibitionGrid {
   .rateImage {
     height: auto !important;
     display: block;
+  }
+}
+/* EXHIBITION: responsive grid (not a 7-image strip) */
+.exhibitionGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(7, minmax(0, 1fr)); /* desktop */
+}
+
+/* large tablets / small laptops */
+@media (max-width: 1100px) {
+  .exhibitionGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* tablets */
+@media (max-width: 900px) {
+  .exhibitionGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* phones */
+@media (max-width: 640px) {
+  .exhibitionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* very small phones */
+@media (max-width: 420px) {
+  .exhibitionGrid {
+    grid-template-columns: 1fr;
   }
 }
