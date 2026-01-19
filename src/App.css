@@ -597,3 +597,50 @@ html, body {
     padding: 8px;
   }
 }
+@media (max-width: 640px) {
+  .photoWrap,
+  .gallerySection,
+  .ratesSection,
+  .heroBanner,
+  .joinSection {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .photo,
+  .galleryImage,
+  .rateImage {
+    height: auto !important;
+    display: block;
+  }
+}
+/* About page videos: keep 2-up on mobile */
+.sparringGrid {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* About page videos: stack on mobile */
+.sparringGrid {
+  grid-template-columns: 1fr 1fr; /* desktop */
+}
+
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+
+  .dojoRulesGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .exhibitionGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+}
+
+/* Mobile-only layouts (via JS class) */
+html.is-mobile .dojoRulesGrid {
+  grid-template-columns: 1fr !important;
+}
+
+html.is-mobile .exhibitionGrid {
+  grid-template-columns: 1fr !important;
+}

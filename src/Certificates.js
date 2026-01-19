@@ -141,15 +141,15 @@ export default function Certificates() {
 <div style={{ width: "100%", marginTop: "60px", clear: "both" }}>
 
           <div
-            style={{
-              maxWidth: "1100px",
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: "1fr auto 1fr",
-              alignItems: "center",
-              gap: "32px",
-            }}
-          >
+  className="dojoRulesGrid"
+  style={{
+    maxWidth: "1100px",
+    margin: "0 auto",
+    alignItems: "center",
+    gap: "32px",
+  }}
+>
+
             <img
               src="/images/dojo-rules/dojo-rules-left.jpg"
               alt="Dojo Rules Left"

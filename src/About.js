@@ -258,9 +258,7 @@ export default function About() {
             .gallerySection > div[style*="gridTemplateColumns: 1fr 1fr"] {
               grid-template-columns: 1fr !important;
             }
-            .sparringGrid {
-              grid-template-columns: 1fr !important;
-            }
+           
           }
         `}
       </style>
