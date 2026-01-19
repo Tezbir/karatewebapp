@@ -610,18 +610,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-.joinSmall,
-.joinSmall * {
-  color: #fff !important;
-  font-size: 12px;
-  line-height: 18px;
-  text-align: center;
-}
-
-.joinSmall a,
-.joinSmall a:visited,
-.joinSmall a:hover,
-.joinSmall a:active {
-  color: #fff !important;
-  text-decoration: underline;
-}
