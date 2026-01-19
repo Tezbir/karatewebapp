@@ -286,7 +286,7 @@ export default function Certificates() {
 
             {/* RIGHT */}
             <div className="flyerCardCol">
-              <h2 className="flyerCardTitle">Business Card</h2>
+              <h2 className="flyerCardTitle"></h2>
               <img
                 src="/images/DojoBuisnessCard.jpg"
                 alt="Business Card"
