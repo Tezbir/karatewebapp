@@ -53,8 +53,8 @@ export default function About() {
           <p style={{ fontSize: "18px", lineHeight: "30px", margin: 0 }}>
             Sensei John Benedict was born on June 25, 1965 in Brooklyn, New York.
             He began his martial arts training in Florida, one of the many stops
-            in a turbulent childhood. Upon returning to Brooklyn some time later,
-            his father, eager to pass on to his son the discipline and strong work
+            in a turbulent childhood. Upon returning to Brooklyn in 1981 his,
+            father, eager to pass on to his son the discipline and strong work
             ethic he had acquired from his career in the military, brought him to
             the Ying Yee Kwoon Martial Arts studio on Roebling Street in
             Williamsburg, Brooklyn.
