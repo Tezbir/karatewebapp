@@ -196,10 +196,10 @@ export default function App() {
                   </a>
 
                   <p className="joinSmall">
-                    All classes are taught by Sensei John Benedict, 7th Degree
-                    Black Belt (Renshi).
-                    <br />
-                    Seitouha Karate (Seigi Dai Dojo)
+  All classes are taught by Sensei John Benedict, 7th Degree Black Belt (Renshi),
+  with 40 years of martial arts experience.
+  <br />
+                    Classes for adults and kids
                     <br />
                     Ronkonkoma, NY
                     <br />
