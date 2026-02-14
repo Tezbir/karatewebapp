@@ -199,10 +199,12 @@ export default function App() {
   All classes are taught by Sensei John Benedict, 7th Degree Black Belt (Renshi),
   with 40 years of martial arts experience.
   <br />
-                    Classes for adults and kids
+                    Seitouha Goju Ryu Karate offers traditional karate and MMA classes
+                    <br />
+                    Teaching adults and kids all throughout Long Island seeking high-quality martial arts training, 
+                    discipline, and self confidence.
                     <br />
                     Ronkonkoma, NY
-                    <br />
                     <br />
                     KARATE • MIXED MARTIAL ARTS (MMA)
                   </p>
