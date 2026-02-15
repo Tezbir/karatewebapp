@@ -84,20 +84,15 @@ export default function App() {
                   </p>
 
                   {/* CTA BUTTONS */}
-                  <div className="ctaRow">
-                    <a className="cta" href={`sms:${phone}`}>
-                      TEXT US
-                    </a>
+                 <div className="ctaRow">
+  <a className="cta" href={`sms:${phone}`}>
+    TEXT US
+  </a>
 
-                    <a
-                      className="cta"
-                      href="https://m.me/john.benedict.862370"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      MESSAGE US
-                    </a>
-                  </div>
+  <a className="cta" href={`tel:${phone}`}>
+    CALL US
+  </a>
+</div>
                 </section>
 
                 {/* VIDEO */}
