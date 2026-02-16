@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
+import { track } from "@vercel/analytics";
 
 import ScrollToTop from "./ScrollToTop";
 import About from "./About";
@@ -85,13 +86,21 @@ export default function App() {
 
                   {/* CTA BUTTONS */}
                  <div className="ctaRow">
-  <a className="cta" href={`sms:${phone}`}>
-    TEXT US
-  </a>
+  <a
+  className="cta"
+  href={`sms:${phone}`}
+  onClick={() => track("Text Click")}
+>
+  TEXT US
+</a>
 
-  <a className="cta" href={`tel:${phone}`}>
-    CALL US
-  </a>
+  <a
+  className="cta"
+  href={`tel:${phone}`}
+  onClick={() => track("Call Click")}
+>
+  CALL US
+</a>
 </div>
                 </section>
 
