@@ -8,7 +8,7 @@ export default function ContactBox() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/contact",
+        "https://karatewebapp-backend.onrender.com/api/contact",
         {
           method: "POST",
           headers: {
