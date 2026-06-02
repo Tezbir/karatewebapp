@@ -610,3 +610,55 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.contactSection {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contactTitle {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.contactText {
+  color: #cccccc;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contactInput {
+  width: 420px;
+  max-width: 90%;
+  height: 140px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  background: black;
+  color: white;
+  resize: none;
+}
+
+.contactButton {
+  background: #b30000;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.contactButton:hover {
+  background: #e00000;
+}

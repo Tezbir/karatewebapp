@@ -8,6 +8,7 @@ import ScrollToTop from "./ScrollToTop";
 import About from "./About";
 import Certificates from "./Certificates";
 import OldDojo from "./OldDojo";
+import ContactBox from "./ContactBox";
 
 export default function App() {
   const phone = "5163819660";
@@ -176,6 +177,20 @@ export default function App() {
                     src="/images/hero.png"
                     alt="Banner"
                   />
+                </section>
+
+                {/* CONTACT FORM */}
+                <section className="contactSection">
+                  <h2 className="contactTitle">
+                    CAN’T CALL OR TEXT RIGHT NOW?
+                  </h2>
+
+                  <p className="contactText">
+                    Leave your information below and we’ll get back to you
+                    as soon as possible.
+                  </p>
+
+                  <ContactBox />
                 </section>
 
                 {/* ABOUT US BUTTON */}
