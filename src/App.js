@@ -179,20 +179,6 @@ export default function App() {
                   />
                 </section>
 
-                {/* CONTACT FORM */}
-                <section className="contactSection">
-                  <h2 className="contactTitle">
-                    CAN’T CALL OR TEXT RIGHT NOW?
-                  </h2>
-
-                  <p className="contactText">
-                    Leave your information below and we’ll get back to you
-                    as soon as possible.
-                  </p>
-
-                  <ContactBox />
-                </section>
-
                 {/* ABOUT US BUTTON */}
                 <div style={{ textAlign: "center", margin: "24px 0 32px" }}>
                   <Link className="cta" to="/about">
