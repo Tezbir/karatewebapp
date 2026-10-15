@@ -126,48 +126,48 @@ export default function App() {
 
 
                 {/* FACEBOOK VIDEOS */}
-                <section
-                  className="photoWrap"
-                  style={{
-                    marginTop: "24px",
-                    marginBottom: "24px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "24px",
-                  }}
-                >
-                  {[
-                    "https://www.facebook.com/100009262372851/videos/1340012794775269/",
-                    "https://www.facebook.com/100009262372851/videos/970387926079206/",
-                  ].map((videoUrl, index) => (
-                    <div
-                      key={index}
-                      style={{
-                        width: "100%",
-                        maxWidth: "900px",
-                        aspectRatio: "16 / 9",
-                      }}
-                    >
-                      <iframe
-                        title={`Karate Facebook Video ${index + 1}`}
-                        src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-                          videoUrl
-                        )}&show_text=false&width=900`}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          border: "none",
-                          display: "block",
-                        }}
-                        scrolling="no"
-                        allowFullScreen
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </section>
+<section
+  className="photoWrap"
+  style={{
+    marginTop: "24px",
+    marginBottom: "24px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "24px",
+  }}
+>
+  {[
+    "https://www.facebook.com/100009262372851/videos/1340012794775269/",
+    "https://www.facebook.com/100009262372851/videos/970387926079206/",
+  ].map((videoUrl, index) => (
+    <div
+      key={index}
+      style={{
+        width: "100%",
+        maxWidth: "450px",
+        aspectRatio: "16 / 9",
+      }}
+    >
+      <iframe
+        title={`Karate Facebook Video ${index + 1}`}
+        src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+          videoUrl
+        )}&show_text=false&width=450`}
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "none",
+          display: "block",
+        }}
+        scrolling="no"
+        allowFullScreen
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        loading="lazy"
+      />
+    </div>
+  ))}
+</section>
                 {/* GALLERY */}
                 <section className="gallerySection">
                   <div className="galleryRow">
