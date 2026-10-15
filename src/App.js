@@ -140,8 +140,10 @@ export default function App() {
     ].map((videoUrl, index) => (
       <div
         key={index}
-        className="goldFrame"
-        style={{ minWidth: 0 }}
+        style={{
+          minWidth: 0,
+          padding: "11px",
+        }}
       >
         <iframe
           title={`Karate Facebook Video ${index + 1}`}
