@@ -124,6 +124,29 @@ export default function App() {
                   </video>
                 </section>
 
+
+                {/* FACEBOOK VIDEO */}
+                <section className="photoWrap" style={{ marginTop: "24px", marginBottom: "24px" }}>
+                  <iframe
+                    title="Seitouha Goju Ryu Karate Facebook Video"
+                    src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+                      "https://www.facebook.com/100009262372851/videos/970387926079206/"
+                    )}&show_text=false&width=500`}
+                    width="500"
+                    height="600"
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      maxWidth: "500px",
+                      border: "none",
+                      margin: "0 auto",
+                    }}
+                    scrolling="no"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    loading="lazy"
+                  />
+                </section>
                 {/* GALLERY */}
                 <section className="gallerySection">
                   <div className="galleryRow">
