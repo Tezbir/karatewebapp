@@ -125,27 +125,48 @@ export default function App() {
                 </section>
 
 
-                {/* FACEBOOK VIDEO */}
-                <section className="photoWrap" style={{ marginTop: "24px", marginBottom: "24px" }}>
-                  <iframe
-                    title="Seitouha Goju Ryu Karate Facebook Video"
-                    src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-                      "https://www.facebook.com/100009262372851/videos/970387926079206/"
-                    )}&show_text=false&width=500`}
-                    width="500"
-                    height="600"
-                    style={{
-                      display: "block",
-                      width: "100%",
-                      maxWidth: "500px",
-                      border: "none",
-                      margin: "0 auto",
-                    }}
-                    scrolling="no"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    loading="lazy"
-                  />
+                {/* FACEBOOK VIDEOS */}
+                <section
+                  className="photoWrap"
+                  style={{
+                    marginTop: "24px",
+                    marginBottom: "24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "24px",
+                  }}
+                >
+                  {[
+                    "https://www.facebook.com/100009262372851/videos/1340012794775269/",
+                    "https://www.facebook.com/100009262372851/videos/970387926079206/",
+                  ].map((videoUrl, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        width: "100%",
+                        maxWidth: "900px",
+                        aspectRatio: "16 / 9",
+                      }}
+                    >
+                      <iframe
+                        title={`Karate Facebook Video ${index + 1}`}
+                        src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+                          videoUrl
+                        )}&show_text=false&width=900`}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          border: "none",
+                          display: "block",
+                        }}
+                        scrolling="no"
+                        allowFullScreen
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
                 </section>
                 {/* GALLERY */}
                 <section className="gallerySection">
