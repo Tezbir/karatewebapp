@@ -136,7 +136,7 @@ export default function App() {
   <div className="galleryRow">
     {[
       "https://www.facebook.com/100009262372851/videos/1340012794775269/",
-      "https://www.facebook.com/100009262372851/videos/970387926079206/",
+      "https://www.facebook.com/100009262372851/videos/821295009759845/",
     ].map((videoUrl, index) => (
       <div
         key={index}
